@@ -28,7 +28,7 @@ readArr([1, 2, 3, 4, 5, 6]);
 
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
 const createP = (text = '') => {
-    document.write(`<p>${text}</p>`);  //do I need to use return here?
+    document.write(`<p>${text}</p>`);
 }
 
 createP('QWERTY');
