@@ -12,10 +12,10 @@ function User(name, surname, email, phone) {
 }
 
 for (let i = 0; i < 10; i++) {
-    let userName = prompt(`user ${users.length+1}: set your name`);
-    let userSurname = prompt(`user ${users.length+1}: set your surname`);
-    let userEmail = prompt(`user ${users.length+1}: set your email`);
-    let userPhone = prompt(`user ${users.length+1}: set your phone`);
+    let userName = prompt(`user ${users.length + 1}: set your name`);
+    let userSurname = prompt(`user ${users.length + 1}: set your surname`);
+    let userEmail = prompt(`user ${users.length + 1}: set your email`);
+    let userPhone = prompt(`user ${users.length + 1}: set your phone`);
 
     let user = new User(userName, userSurname, userEmail, userPhone);
     users.push(user);
@@ -75,12 +75,19 @@ function Car1(model, manufacturer, year, maxSpeed, volume) {
 
     this.drive = () => console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`);
 
+    // this.info = () => {
+    //     console.log(`model - ${this.model}`);
+    //     console.log(`manufacturer - ${this.manufacturer}`);
+    //     console.log(`year - ${this.year}`);
+    //     console.log(`maxSpeed - ${this.maxSpeed}`);
+    //     console.log(`volume - ${this.volume}`);
+    // }
     this.info = () => {
-        console.log(`model - ${this.model}`);
-        console.log(`manufacturer - ${this.manufacturer}`);
-        console.log(`year - ${this.year}`);
-        console.log(`maxSpeed - ${this.maxSpeed}`);
-        console.log(`volume - ${this.volume}`);
+        for (const key in this) {
+            if (typeof this[key] !== "function") {
+                console.log(`${key} - ${this[key]}`);
+            }
+        }
     }
 
     this.increaseMaxSpeed = (newSpeed) => this.maxSpeed += newSpeed;
@@ -122,11 +129,11 @@ class Car2 {
     }
 
     info() {
-        console.log(`model - ${this.model}`);
-        console.log(`manufacturer - ${this.manufacturer}`);
-        console.log(`year - ${this.year}`);
-        console.log(`maxSpeed - ${this.maxSpeed}`);
-        console.log(`volume - ${this.volume}`);
+        for (const key in this) {
+            if (typeof this[key] !== "function") {
+                console.log(`${key} - ${this[key]}`);
+            }
+        }
     }
 
     increaseMaxSpeed(newSpeed) {
