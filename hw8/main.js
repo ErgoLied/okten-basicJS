@@ -11,15 +11,15 @@ function User(name, surname, email, phone) {
     this.phone = phone;
 }
 
-// for (let i = 0; i < 10; i++) {
-//     let userName = prompt(`user ${users.length+1}: set your name`);
-//     let userSurname = prompt(`user ${users.length+1}: set your surname`);
-//     let userEmail = prompt(`user ${users.length+1}: set your email`);
-//     let userPhone = prompt(`user ${users.length+1}: set your phone`);
-//
-//     let user = new User(userName, userSurname, userEmail, userPhone);
-//     users.push(user);
-// }
+for (let i = 0; i < 10; i++) {
+    let userName = prompt(`user ${users.length+1}: set your name`);
+    let userSurname = prompt(`user ${users.length+1}: set your surname`);
+    let userEmail = prompt(`user ${users.length+1}: set your email`);
+    let userPhone = prompt(`user ${users.length+1}: set your phone`);
+
+    let user = new User(userName, userSurname, userEmail, userPhone);
+    users.push(user);
+}
 
 console.log(users);
 
