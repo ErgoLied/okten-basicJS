@@ -2,7 +2,7 @@
 // - додати йому класи wrap, collapse, alpha, beta
 // - додати стилі(довільні значення) : колір фону, колір тексту, розмір тексту
 // - додати цей блок в body.
-//???????????????????? - клонувати його повністю, та додати клон в body.
+// - клонувати його повністю, та додати клон в body.
 let div1 = document.createElement("div");
 div1.classList.add('wrap', 'collapse', 'alpha', 'beta');
 div1.style.background = 'lightblue';
@@ -10,8 +10,10 @@ div1.style.color = 'darkblue';
 div1.style.fontSize = '30px';
 div1.innerText = 'lorem'
 
+let div2 = div1.cloneNode(true);
+
 let body = document.body;
-body.append(div1);
+body.append(div1, div2);
 
 
 // - Є масив:
