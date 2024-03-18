@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sessions</title>
+	<style>
+		body{
+			font-family: Arial, sans-serif;
+			font-size: 12pt;
+		}
+		p{
+            margin: 3px;
+		}
+	</style>
+</head>
+<body>
+
+<script>
+    let sessions = JSON.parse(localStorage.getItem('sessions'));
+    let h1Info = document.createElement('h1');
+    let divSession = document.createElement('div');
+
+    if (sessions) {
+        h1Info.innerText = `Main page was visited ${sessions.length} times`;
+        sessions.map((session, id) => {
+            let sessionID = document.createElement('p');
+            sessionID.innerText = `session ${id + 1}`;
+
+            let sessionTime = document.createElement('p');
+            sessionTime.innerText = `time: ${session.timeLoad}`;
+
+            let sessionDate = document.createElement('p');
+            sessionDate.innerText = `date: ${session.dateLoad}`;
+
+            let hr = document.createElement('hr');
+            divSession.append(sessionID, sessionTime, sessionDate, hr);
+        });
+    } else {
+        h1Info.innerText = 'Main page was visited 0 times';
+    }
+
+    document.body.appendChild(h1Info);
+    divSession ? document.body.appendChild(divSession) : '';
+</script>
+</body>
+</html>
