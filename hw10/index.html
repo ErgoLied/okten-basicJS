@@ -4,6 +4,23 @@
 	<meta charset="UTF-8">
 	<title>Title</title>
 </head>
+<style>
+	#tableForm{
+		display: flex;
+		flex-direction: column;
+        width: 30%;
+
+		input{
+			width: 50px;
+		}
+	}
+
+	td{
+		border: 1px solid black;
+        border-collapse: collapse;
+	}
+</style>
+
 <body>
 
 <form id="userForm">
@@ -24,6 +41,26 @@
 	<button type="submit">check</button>
 </form>
 <div id="ageInfo"></div>
+
+<button id="previous"></button>
+<button id="next"></button>
+<div id="arrayBlock"></div>
+
+<hr>
+
+<form id="tableForm">
+	<label for="rows">set rows</label><input type="number" id="rows" value="2">
+	<label for="columns">set columns</label><input type="number" id="columns" value="2">
+	<label for="tableContent">set content separated by commas</label>
+	<textarea id="tableContent" rows="3">Lorem, ipsum, dolor, sit</textarea>
+
+	<button id="createTable">create table</button>
+</form>
+
+<div id="tableBlock"></div>
+
+<hr>
+<div id="UAH"></div>
 
 <script src="main.js"></script>
 </body>
